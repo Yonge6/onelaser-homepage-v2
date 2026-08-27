@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+
+references/*
+!references/source-visual.png
+!references/implementation-desktop-final.png
+!references/implementation-mobile.png
+!references/design-comparison-desktop-final.png
