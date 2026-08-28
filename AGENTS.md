@@ -14,3 +14,6 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - The selected visual at `references/source-visual.png` is the layout, density, typography, and hierarchy source of truth.
 - The core page logic is promise → audience path → guided machine match → machine comparison → project outcomes → trust → one next step.
 - Reuse official OneLaser machine renders and official `1laser.com` destinations. Do not invent commercial facts.
+- Reuse the published OneLaser homepage header, accessible Mega Menu behavior, announcement bar, and full footer rather than creating V2-only global chrome.
+- Do not show section progress labels such as `02 / 05`. Keep major section titles on one line at desktop widths; allow responsive wrapping below the desktop navigation breakpoint.
+- Project proof must make the decision logic explicit: product → material → production goal → best-fit machine.
