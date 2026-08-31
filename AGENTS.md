@@ -17,3 +17,4 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Reuse the published OneLaser homepage header, accessible Mega Menu behavior, announcement bar, and full footer rather than creating V2-only global chrome.
 - Do not show section progress labels such as `02 / 05`. Keep major section titles on one line at desktop widths; allow responsive wrapping below the desktop navigation breakpoint.
 - Project proof must make the decision logic explicit: product → material → production goal → best-fit machine.
+- Lock the published announcement bar, top navigation, accessible Mega Menu, and full footer unless the user explicitly reopens those areas. Homepage content follows: Hero Campaigns → Meet the OneLaser Lineup (with finder) → Made with OneLaser → Why OneLaser Performs Better → Built for Every Ambition → OneLaser in the Real World → The OneLaser Standard → Explore / Community / final CTA.

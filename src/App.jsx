@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import "./v3.css";
 import {
   ArrowRight,
   ArrowUpRight,
   Briefcase,
+  CaretLeft,
   CaretDown,
   CaretRight,
   CheckCircle,
@@ -15,6 +17,7 @@ import {
   MagnifyingGlass,
   MapPin,
   Phone,
+  Play,
   ShieldCheck,
   ShoppingBag,
   Sparkle,
@@ -264,6 +267,118 @@ const trustChains = [
   },
 ];
 
+const campaignSlides = [
+  {
+    id: "xrf",
+    eyebrow: "XRF DESKTOP RF LASER",
+    title: "Built for reliable output.",
+    copy: "Fine-detail engraving, fast personalization, and a production path that grows beyond the first project.",
+    action: "Explore XRF",
+    href: machineLinks.xrf,
+    image: "xrf-dark-hero.webp",
+    alt: "OneLaser XRF desktop RF laser on a dark engineering stage",
+    theme: "dark",
+  },
+  {
+    id: "hydra",
+    eyebrow: "HYDRA GEN2",
+    title: "Scale with confidence.",
+    copy: "A high-throughput platform for larger formats, repeat orders, and demanding production environments.",
+    action: "Explore Hydra Gen2",
+    href: machineLinks.hydra,
+    image: "home-product-hydra-gen2-scene.webp",
+    alt: "OneLaser Hydra Gen2 in a working production studio",
+    theme: "image",
+  },
+  {
+    id: "education",
+    eyebrow: "ONELASER FOR EDUCATION",
+    title: "Make learning tangible.",
+    copy: "Bring design, prototyping, and hands-on STEM work into classrooms, labs, and maker spaces.",
+    action: "Explore education fit",
+    href: "https://www.1laser.com/pages/contact-us",
+    image: "home-industry-education-v2.jpg",
+    alt: "Students collaborating on hands-on projects in a classroom",
+    theme: "image",
+  },
+];
+
+const lineupCards = [
+  { id: "cobra", label: "Flexible workshop cutting", scene: "home-product-cobra-scene.webp", ...machines.cobra },
+  { id: "xrf", label: "Precision desktop production", scene: "home-product-xrf-scene.webp", ...machines.xrf },
+  { id: "hydra", label: "High-throughput production", scene: "home-product-hydra-gen2-scene.webp", ...machines.hydra },
+  { id: "vertigo", label: "Dedicated cylindrical engraving", scene: "home-product-vertigo-scene.webp", ...machines.vertigo },
+];
+
+const projectFilters = ["All", "Wood", "Acrylic", "Leather", "Metal", "Glass"];
+
+const showcaseProjects = [
+  { title: "Personalized Serving Board", material: "Wood", materials: ["Wood"], outcome: "Premium gifting and local retail", machine: "XRF", image: "product-walnut-serving-board.webp" },
+  { title: "Family Photo Panel", material: "Wood", materials: ["Wood"], outcome: "Personalized wall art", machine: "XRF", image: "product-photo-wall-panel.webp" },
+  { title: "Layered Acrylic Wall Sign", material: "Acrylic", materials: ["Acrylic"], outcome: "Signage and event production", machine: "Cobra Series", image: "home-project-large-acrylic-sign.webp" },
+  { title: "Mountain Feature Wall", material: "Walnut", materials: ["Wood"], outcome: "Large-format interior décor", machine: "Hydra Gen2", image: "home-project-walnut-mountain-wall.webp" },
+  { title: "Corporate Tumbler Batch", material: "Coated metal", materials: ["Metal"], outcome: "Repeat rotary personalization", machine: "VertiGo", image: "home-project-vertigo-corporate-tumbler-batch.webp" },
+  { title: "Leather Patch Cap", material: "Leather", materials: ["Leather"], outcome: "Branded merchandise", machine: "Cobra Series", image: "product-leather-patch-cap.webp" },
+  { title: "Keepsake Jewelry Box", material: "Wood", materials: ["Wood"], outcome: "Premium personalized gifts", machine: "XRF", image: "product-engraved-jewelry-box.webp" },
+  { title: "Layered City Map", material: "Wood", materials: ["Wood"], outcome: "Detailed large-format wall art", machine: "Hydra Gen2", image: "home-project-layered-city-map.webp" },
+  { title: "Batch Leather Gifts", material: "Leather", materials: ["Leather"], outcome: "Repeatable corporate orders", machine: "Hydra Gen2", image: "home-project-batch-leather-gifts.webp" },
+  { title: "Custom Tumbler", material: "Coated metal", materials: ["Metal"], outcome: "Drinkware personalization", machine: "VertiGo", image: "product-custom-tumbler.webp" },
+  { title: "Outdoor Estate Sign", material: "Wood", materials: ["Wood"], outcome: "High-value exterior signage", machine: "Hydra Gen2", image: "product-outdoor-estate-sign.webp" },
+];
+
+const performanceStories = [
+  {
+    eyebrow: "RF PRECISION",
+    title: "Details stay sharp when the work gets fast.",
+    copy: "Fast RF response helps preserve small type, clean edges, and consistent contrast across repeat engraving work.",
+    proof: "0.07 mm spot · Up to 2,000 DPI",
+    image: "why-onelaser-rf-precision.jpg",
+    alt: "Close-up OneLaser RF engraving detail and laser head",
+  },
+  {
+    eyebrow: "SPEED WITH CONTROL",
+    title: "Motion designed to hold the toolpath.",
+    copy: "Closed-loop motion, a lighter head, and Hydra-derived all-steel axes keep fast production controlled instead of simply chasing a headline number.",
+    proof: "1,200 mm/s · True 3.5G",
+    image: "why-onelaser-unmatched-speed.jpg",
+    alt: "OneLaser motion system shown during high-speed engraving",
+  },
+  {
+    eyebrow: "VISION WORKFLOW",
+    title: "See the job before the first cut.",
+    copy: "Camera-guided positioning brings artwork, material, and the working area into one direct workflow for more confident setup.",
+    proof: "Full-bed view · Guided alignment",
+    image: "why-onelaser-vision-intelligence.jpg",
+    alt: "OneLaser vision system aligning artwork to material",
+  },
+];
+
+const ambitionPaths = [
+  { id: "makers", label: "Makers", title: "Turn ideas into finished objects.", copy: "Move from one-off experiments to polished gifts, home décor, signs, and personal work with a machine matched to what you want to make.", image: "home-industry-makers-v2.jpg", alt: "Maker presenting finished engraved creations", href: "https://www.1laser.com/pages/laser-engraving-community", action: "Meet the community" },
+  { id: "business", label: "Business", title: "Build a workflow you can repeat.", copy: "Choose the right platform for personalization, broader catalogs, repeat orders, and dependable daily production.", image: "home-industry-business-v2.jpg", alt: "Small business owner preparing personalized products", href: "https://www.1laser.com/products/sales-consultation-call", action: "Talk to a laser expert" },
+  { id: "education", label: "Education", title: "Make learning tangible.", copy: "Bring prototyping, design, and hands-on STEM work into classrooms, labs, and maker spaces with training and support close at hand.", image: "home-industry-education-v2.jpg", alt: "Students collaborating on hands-on STEM projects", href: "https://www.1laser.com/pages/contact-us", action: "Explore education fit" },
+];
+
+const realWorldVideos = [
+  { id: "_dv0xXmHSiA", title: "Engineered in the USA", copy: "What makes OneLaser different.", image: "home-video-engineered-usa.jpg" },
+  { id: "tSroh4OUkX4", title: "Inside OneLaser’s Production Facility", copy: "A look at how OneLaser machines are built.", image: "home-video-production-facility.jpg" },
+  { id: "87PrP4Vigzo", title: "OneLaser XRF Full Overview", copy: "Features, performance, and real-world results.", image: "home-video-xrf-overview.jpg" },
+  { id: "RxgWwJg5kAk", title: "Behind The Maker Ep.001", copy: "Stories from the makers who inspire us.", image: "home-video-behind-maker.jpg" },
+];
+
+const standardPillars = [
+  { title: "U.S. company and local team", copy: "An accountable OneLaser team for sales, service, and product guidance in the U.S." },
+  { title: "Training that gets work moving", copy: "One-on-one training and knowledge resources help teams move from setup to real jobs." },
+  { title: "Warranty and easy returns", copy: "Official warranty coverage and a 30-day return policy provide a clearer ownership path." },
+  { title: "Technical support after delivery", copy: "Support continues through real technicians, service resources, and available parts." },
+];
+
+const exploreLinks = [
+  { label: "Learn", title: "Ideas, settings, and practical guides", action: "Visit the blog", href: "https://www.1laser.com/blogs/topic" },
+  { label: "Connect", title: "Projects and people in the OneLaser community", action: "Join the community", href: "https://www.1laser.com/pages/laser-engraving-community" },
+  { label: "See it work", title: "Find a demo and experience the workflow", action: "Explore the Demo Room", href: "https://www.1laser.com/pages/demoroom" },
+];
+
 function ExternalLink({ href, children, className = "", ...props }) {
   return (
     <a className={className} href={href} target="_blank" rel="noreferrer" {...props}>
@@ -287,7 +402,13 @@ export function App() {
   const [volume, setVolume] = useState("");
   const [format, setFormat] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [activeCampaign, setActiveCampaign] = useState(0);
+  const [projectFilter, setProjectFilter] = useState("All");
+  const [activeAmbition, setActiveAmbition] = useState("makers");
+  const [activeVideo, setActiveVideo] = useState(null);
   const suppressMegaFocusRef = useRef(false);
+  const projectRailRef = useRef(null);
+  const videoRailRef = useRef(null);
   const activeResourceMenu = activeMegaMenu === "support" ? supportMenu : communityMenu;
 
   useEffect(() => {
@@ -312,6 +433,20 @@ export function App() {
     return () => document.body.classList.remove("menu-lock");
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!activeVideo) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setActiveVideo(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [activeVideo]);
+
   const enterMegaMenu = (menu) => (event) => {
     if (event.key !== "ArrowDown") return;
     event.preventDefault();
@@ -330,6 +465,8 @@ export function App() {
 
   const recommendation = machines[recommendedId];
   const finderReady = material && volume && format;
+  const filteredProjects = showcaseProjects.filter((project) => projectFilter === "All" || project.materials.includes(projectFilter));
+  const selectedAmbition = ambitionPaths.find((item) => item.id === activeAmbition) || ambitionPaths[0];
 
   const chooseAudience = (id) => {
     setAudience(id);
@@ -445,7 +582,164 @@ export function App() {
       {activeMegaMenu && <button className={`home-mega-backdrop${announcementVisible ? " has-announcement" : ""}`} type="button" onClick={() => setActiveMegaMenu(null)} aria-label="Close expanded navigation" />}
 
       <div className="page-content" id="top">
-        <main>
+        <main className="v3-main">
+          <section className={"v3-campaign v3-campaign--" + campaignSlides[activeCampaign].theme} aria-labelledby="campaign-title">
+            <img className="v3-campaign__image" src={asset(campaignSlides[activeCampaign].image)} alt={campaignSlides[activeCampaign].alt} />
+            <span className="v3-campaign__shade" />
+            <div className="v3-campaign__copy">
+              <span>{campaignSlides[activeCampaign].eyebrow}</span>
+              <h1 id="campaign-title">{campaignSlides[activeCampaign].title}</h1>
+              <p>{campaignSlides[activeCampaign].copy}</p>
+              <ExternalLink className="v3-button v3-button--red" href={campaignSlides[activeCampaign].href}>{campaignSlides[activeCampaign].action} <ArrowUpRight weight="bold" /></ExternalLink>
+            </div>
+            <div className="v3-campaign__controls" aria-label="Choose a featured OneLaser story">
+              {campaignSlides.map((slide, index) => (
+                <button className={index === activeCampaign ? "is-active" : ""} type="button" aria-label={"Show " + slide.eyebrow} aria-current={index === activeCampaign ? "true" : undefined} onClick={() => setActiveCampaign(index)} key={slide.id}><span /></button>
+              ))}
+            </div>
+          </section>
+
+          <section className="v3-section v3-lineup" id="v3-machines" aria-labelledby="lineup-title">
+            <header className="v3-heading">
+              <span>MEET THE ONELASER LINEUP</span>
+              <h2 id="lineup-title">Start with what you want to make.</h2>
+              <p>Four distinct platforms, each built around a different kind of work. Compare the fit before you compare the spec sheet.</p>
+            </header>
+            <div className="v3-lineup__grid">
+              {lineupCards.map((machine) => (
+                <ExternalLink className={"v3-lineup-card v3-lineup-card--" + machine.id} href={machine.href} key={machine.id}>
+                  <img className="v3-lineup-card__scene" src={asset(machine.scene)} alt="" />
+                  <span className="v3-lineup-card__shade" />
+                  <div className="v3-lineup-card__copy">
+                    <span>{machine.label}</span>
+                    <h3>{machine.name}</h3>
+                    <p>{machine.copy}</p>
+                    <strong>Explore {machine.name.replace("™ Series", "").replace("™", "")} <ArrowUpRight /></strong>
+                  </div>
+                  <img className="v3-lineup-card__machine" src={asset(machine.image)} alt={machine.name + " laser machine"} />
+                </ExternalLink>
+              ))}
+            </div>
+
+            <div className="v3-finder" id="finder">
+              <div className="v3-finder__intro">
+                <span>NOT SURE WHERE TO START?</span>
+                <h2>Find the right machine.</h2>
+                <p>Choose the material, production pace, and object format. The recommendation explains the match instead of hiding it behind a score.</p>
+              </div>
+              <form className="v3-finder__form" onSubmit={submitFinder}>
+                <label><span>Material</span><select required value={material} onChange={(event) => { setMaterial(event.target.value); setSubmitted(false); }}><option value="">Select material</option><option value="wood">Wood, leather, coated metal</option><option value="acrylic">Acrylic and signage</option><option value="glass">Glass and drinkware</option><option value="mixed">Mixed materials</option></select></label>
+                <label><span>Output volume</span><select required value={volume} onChange={(event) => { setVolume(event.target.value); setSubmitted(false); }}><option value="">Select output volume</option><option value="small-batch">Projects and small batches</option><option value="shared">Shared studio or classroom</option><option value="production">Daily production and repeat orders</option></select></label>
+                <label><span>Object format</span><select required value={format} onChange={(event) => { setFormat(event.target.value); setSubmitted(false); }}><option value="">Select object format</option><option value="flat">Mostly flat materials</option><option value="large">Large sheets and panels</option><option value="cylindrical">Tumblers and cylindrical goods</option></select></label>
+                <button className="v3-button v3-button--red" type="submit">Show my match <ArrowRight weight="bold" /></button>
+              </form>
+              {submitted && (
+                <article className="v3-finder__result" id="finder-result" aria-live="polite">
+                  <div>
+                    <span className="v3-finder__match"><CheckCircle weight="fill" /> Recommended starting point</span>
+                    <h3>{recommendation.name}</h3>
+                    <p>{recommendation.copy}</p>
+                    <ul>
+                      <li><strong>Material</strong><span>{material === "acrylic" ? "Acrylic / signage" : material === "mixed" ? "Mixed materials" : material === "glass" ? "Glass / drinkware" : "Wood / leather / coated metal"}</span></li>
+                      <li><strong>Production pace</strong><span>{volume === "production" ? "Daily production" : volume === "shared" ? "Shared use" : "Projects / small batches"}</span></li>
+                      <li><strong>Object format</strong><span>{format === "cylindrical" ? "Cylindrical goods" : format === "large" ? "Large sheets / panels" : "Mostly flat"}</span></li>
+                    </ul>
+                    <ExternalLink className="v3-button v3-button--dark" href={recommendation.href}>Explore {recommendation.name.replace("™", "")} <ArrowUpRight /></ExternalLink>
+                  </div>
+                  <img src={asset(recommendation.image)} alt={recommendation.name + " laser machine"} />
+                </article>
+              )}
+            </div>
+          </section>
+
+          <section className="v3-section v3-made" id="v3-outcomes" aria-labelledby="made-title">
+            <header className="v3-heading v3-heading--with-controls">
+              <div><span>MADE WITH ONELASER</span><h2 id="made-title">See the outcome before the machine.</h2><p>Finished goods, popular product directions, and commercial opportunities—organized by the material that receives the engraving.</p></div>
+              <div className="v3-rail-controls"><button type="button" aria-label="Previous projects" onClick={() => projectRailRef.current?.scrollBy({ left: -520, behavior: "smooth" })}><CaretLeft /></button><button type="button" aria-label="More projects" onClick={() => projectRailRef.current?.scrollBy({ left: 520, behavior: "smooth" })}><CaretRight /></button></div>
+            </header>
+            <nav className="v3-made__filters" aria-label="Filter projects by engraved material">
+              {projectFilters.map((filter) => <button className={projectFilter === filter ? "is-active" : ""} type="button" aria-pressed={projectFilter === filter} onClick={() => { setProjectFilter(filter); projectRailRef.current?.scrollTo({ left: 0, behavior: "smooth" }); }} key={filter}>{filter}</button>)}
+            </nav>
+            <div className="v3-made__rail" ref={projectRailRef}>
+              {filteredProjects.map((project) => (
+                <article className="v3-project" key={project.title}>
+                  <img src={asset(project.image)} alt={project.title} />
+                  <span className="v3-project__shade" />
+                  <div><span>{project.material}</span><h3>{project.title}</h3><p>{project.outcome}</p><strong>Best fit: {project.machine}</strong></div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="v3-performance" id="v3-why" aria-labelledby="performance-title">
+            <div className="v3-section">
+              <header className="v3-heading v3-heading--inverse"><span>WHY ONELASER PERFORMS BETTER</span><h2 id="performance-title">Performance is more than one number.</h2><p>RF response, controlled motion, vision-assisted setup, rigid structure, and U.S. engineering work together from first alignment to finished output.</p></header>
+              <div className="v3-performance__stories">
+                {performanceStories.map((story) => (
+                  <article className="v3-performance-story" key={story.eyebrow}>
+                    <figure><img src={asset(story.image)} alt={story.alt} /></figure>
+                    <div><span>{story.eyebrow}</span><h3>{story.title}</h3><p>{story.copy}</p><strong>{story.proof}</strong></div>
+                  </article>
+                ))}
+              </div>
+              <div className="v3-performance__proof"><span><strong>20% lighter head</strong>Faster controlled movement</span><span><strong>All-steel axes</strong>Hydra-derived motion structure</span><span><strong>U.S. engineering</strong>Guidance and technical support</span></div>
+            </div>
+          </section>
+
+          <section className="v3-section v3-ambitions" id="v3-industries" aria-labelledby="ambitions-title">
+            <header className="v3-heading"><span>BUILT FOR EVERY AMBITION</span><h2 id="ambitions-title">Different goals. One clear machine path.</h2><p>Choose the environment that looks most like yours, then explore the OneLaser path designed around it.</p></header>
+            <div className="v3-ambitions__tabs" role="tablist" aria-label="Choose a OneLaser ambition">
+              {ambitionPaths.map((item) => <button className={activeAmbition === item.id ? "is-active" : ""} type="button" role="tab" aria-selected={activeAmbition === item.id} onClick={() => setActiveAmbition(item.id)} key={item.id}>{item.label}</button>)}
+            </div>
+            <article className="v3-ambition-stage" role="tabpanel">
+              <img src={asset(selectedAmbition.image)} alt={selectedAmbition.alt} />
+              <span className="v3-ambition-stage__shade" />
+              <div><span>{selectedAmbition.label}</span><h3>{selectedAmbition.title}</h3><p>{selectedAmbition.copy}</p><ExternalLink href={selectedAmbition.href}>{selectedAmbition.action} <ArrowUpRight /></ExternalLink></div>
+            </article>
+          </section>
+
+          <section className="v3-section v3-real" id="v3-real-world" aria-labelledby="real-title">
+            <header className="v3-heading v3-heading--with-controls">
+              <div><span>ONELASER IN THE REAL WORLD</span><h2 id="real-title">See OneLaser at work.</h2><p>Go beyond product renders with engineering, production, machine, and maker stories.</p></div>
+              <div className="v3-rail-controls"><button type="button" aria-label="Previous videos" onClick={() => videoRailRef.current?.scrollBy({ left: -460, behavior: "smooth" })}><CaretLeft /></button><button type="button" aria-label="More videos" onClick={() => videoRailRef.current?.scrollBy({ left: 460, behavior: "smooth" })}><CaretRight /></button></div>
+            </header>
+            <div className="v3-real__rail" ref={videoRailRef}>
+              {realWorldVideos.map((video) => (
+                <article className="v3-video-card" key={video.id}>
+                  <button type="button" aria-label={"Play " + video.title} onClick={() => setActiveVideo(video)}><img src={asset(video.image)} alt="" /><span><Play weight="fill" /></span></button>
+                  <h3>{video.title}</h3><p>{video.copy}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="v3-standard" id="v3-standard" aria-labelledby="standard-title">
+            <div className="v3-standard__visual"><img src={asset("xrf-workshop-story.webp")} alt="OneLaser owner with an XRF machine and finished work in a U.S. workshop" /></div>
+            <div className="v3-standard__content">
+              <header className="v3-heading"><span>THE ONELASER STANDARD</span><h2 id="standard-title">The machine is only the beginning.</h2><p>Ownership is backed by a U.S. company, local guidance, training, official policy coverage, and technical support after delivery.</p></header>
+              <div className="v3-standard__grid">{standardPillars.map((pillar) => <article key={pillar.title}><h3>{pillar.title}</h3><p>{pillar.copy}</p></article>)}</div>
+              <ExternalLink className="v3-text-link" href="https://www.1laser.com/pages/sales-consultation">Explore OneLaser support <ArrowUpRight /></ExternalLink>
+            </div>
+          </section>
+
+          <section className="v3-section v3-explore" id="v3-explore" aria-labelledby="explore-title">
+            <header className="v3-heading"><span>EXPLORE ONELASER</span><h2 id="explore-title">Learn more. See more. Take the next step.</h2></header>
+            <div className="v3-explore__links">
+              {exploreLinks.map((item) => <ExternalLink href={item.href} key={item.label}><span>{item.label}</span><h3>{item.title}</h3><strong>{item.action} <ArrowUpRight /></strong></ExternalLink>)}
+            </div>
+            <div className="v3-final-cta"><div><span>READY WHEN YOU ARE</span><h2>Find the OneLaser built for you.</h2></div><div><ExternalLink className="v3-button v3-button--light" href="https://www.1laser.com/collections/laser-engraving-cutting-marking-machines">Shop laser machines <ArrowUpRight /></ExternalLink><ExternalLink className="v3-final-cta__link" href="https://www.1laser.com/products/sales-consultation-call">Book a free call</ExternalLink></div></div>
+          </section>
+
+          {activeVideo && (
+            <div className="v3-video-modal" role="dialog" aria-modal="true" aria-label={activeVideo.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveVideo(null); }}>
+              <div className="v3-video-modal__panel">
+                <button type="button" aria-label="Close video" onClick={() => setActiveVideo(null)}><X weight="bold" /></button>
+                <iframe src={"https://www.youtube-nocookie.com/embed/" + activeVideo.id + "?autoplay=1&rel=0"} title={activeVideo.title} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
+              </div>
+            </div>
+          )}
+
+          {false && (<>
           <section className="hero" aria-labelledby="hero-title">
             <div className="hero__copy">
               <h1 id="hero-title">Build More.<br />Deliver Faster.</h1>
@@ -639,6 +933,7 @@ export function App() {
               <ExternalLink href="https://www.1laser.com/products/sales-consultation-call"><EnvelopeSimple /><span><strong>Get a quote</strong><small>Plan with an expert</small></span><ArrowUpRight /></ExternalLink>
             </div>
           </section>
+          </>)}
         </main>
 
         <footer className="home-footer">
