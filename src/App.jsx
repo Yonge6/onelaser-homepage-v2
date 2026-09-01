@@ -773,7 +773,7 @@ export function App() {
             <div className="v3-standard__content">
               <header className="v3-heading"><span>THE ONELASER STANDARD</span><h2 id="standard-title">Make better with one.</h2><p>Ownership is backed by a U.S. company, local guidance, training, official policy coverage, and technical support after delivery.</p></header>
               <div className="v3-standard__grid">{standardPillars.map((pillar) => <article key={pillar.title}><h3>{pillar.title}</h3><p>{pillar.copy}</p></article>)}</div>
-              <ExternalLink className="v3-text-link" href="https://www.1laser.com/pages/sales-consultation">Explore OneLaser support <ArrowUpRight /></ExternalLink>
+              <div className="v3-standard__action"><ExternalLink className="v3-button v3-button--red" href="https://www.1laser.com/pages/sales-consultation">Explore OneLaser support <ArrowUpRight /></ExternalLink></div>
             </div>
           </section>
 
@@ -782,7 +782,7 @@ export function App() {
             <div className="v3-explore__links">
               {exploreLinks.map((item) => <ExternalLink href={item.href} key={item.label}><span>{item.label}</span><h3>{item.title}</h3><strong>{item.action} <ArrowUpRight /></strong></ExternalLink>)}
             </div>
-            <div className="v3-final-cta"><div><span>READY WHEN YOU ARE</span><h2>Find the OneLaser built for you.</h2></div><div><ExternalLink className="v3-button v3-button--light" href="https://www.1laser.com/collections/laser-engraving-cutting-marking-machines">Shop laser machines <ArrowUpRight /></ExternalLink></div></div>
+            <div className="v3-final-cta"><div><span>READY WHEN YOU ARE</span><h2>Find the OneLaser built for you.</h2></div><div><ExternalLink className="v3-button v3-button--red" href="https://www.1laser.com/collections/laser-engraving-cutting-marking-machines">Shop laser machines <ArrowUpRight /></ExternalLink></div></div>
           </section>
 
           {activeVideo && (

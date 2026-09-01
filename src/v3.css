@@ -124,6 +124,14 @@
   background: #b9250b;
 }
 
+.v3-finder__result .v3-button--red {
+  font-weight: 700;
+}
+
+.v3-campaign .v3-button--red {
+  font-weight: 700;
+}
+
 .v3-button--dark {
   color: #fff;
   background: #111;
@@ -559,6 +567,7 @@
   padding-bottom: 64px;
   padding-right: 0;
   padding-left: 0;
+  background: var(--v3-gray);
 }
 
 .v3-made > .v3-heading,
@@ -622,9 +631,9 @@
 
 .v3-made__rail {
   display: grid;
-  grid-template-rows: repeat(3, 210px);
+  grid-template-rows: 480px;
   grid-auto-flow: column;
-  grid-auto-columns: clamp(288px, 20.5vw, 330px);
+  grid-auto-columns: clamp(340px, 27vw, 420px);
   gap: 12px;
   overflow-x: auto;
   padding: 0 max(24px, calc((100vw - 1360px) / 2 + 48px)) 12px;
@@ -698,7 +707,7 @@
 
 .v3-project h3 {
   margin: 6px 0 0;
-  font-size: 19px;
+  font-size: 23px;
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.025em;
@@ -934,6 +943,7 @@
 
 .v3-ambitions {
   padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 .v3-ambitions__tabs button {
@@ -1020,6 +1030,7 @@
 
 .v3-real {
   padding-top: 72px;
+  padding-bottom: 64px;
 }
 
 .v3-video-card {
@@ -1105,7 +1116,14 @@
   max-width: 1120px;
 }
 
-.v3-standard .v3-text-link {
+.v3-standard__action {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.v3-standard__action .v3-button,
+.v3-final-cta .v3-button--red {
   font-weight: 700;
 }
 
@@ -1676,7 +1694,7 @@
   }
 
   .v3-made__rail {
-    grid-template-rows: repeat(2, 180px);
+    grid-template-rows: 400px;
     grid-auto-columns: 82vw;
     padding-right: 18px;
     padding-left: 18px;
@@ -1690,7 +1708,7 @@
 
   .v3-project {
     max-width: none;
-    height: 180px;
+    height: 400px;
   }
 
   .v3-performance .v3-section {
