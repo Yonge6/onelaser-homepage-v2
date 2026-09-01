@@ -24,6 +24,8 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Why OneLaser uses one dark engineering stage, a three-metric proof rail, two approved evidence images, and one compact four-part system strip. The reading order is engineering system → numeric proof → visible proof → ownership system; avoid a flat wall of equal-weight feature cards or the former long alternating story stack.
 - Lineup, Why OneLaser, and Built for Every Ambition use a compact 64 px desktop entry rhythm so adjacent section padding does not create oversized blank bands; Why OneLaser itself stays on white.
 - Built for Every Ambition and OneLaser in the Real World use 64 px bottom spacing instead of the default 112 px to prevent oversized gaps before the next module.
+- The ambition stage gives desktop hover and keyboard focus feedback through restrained lift, shadow, image scale, and link emphasis; touch stays static and reduced-motion removes displacement.
+- The finder follows the compact section rhythm: 48 px desktop/36 px mobile separation from the lineup, then a small 32 px desktop/24 px mobile white buffer before Made with OneLaser.
 - The OneLaser Standard uses the user-supplied compressed U.S. headquarters aerial as its lead visual and the title `Make better with one.`. The section stays white/transparent; its image uses the same inset content width and 24–32 px radius as other primary media.
 - OneLaser Standard support and the final machine-shopping action use centered or context-aligned red primary buttons rather than text links or light buttons.
 - Campaign and ambition photography must ship as responsive compressed WebP assets; the first campaign image is preloaded and below-fold images remain lazy-loaded.
