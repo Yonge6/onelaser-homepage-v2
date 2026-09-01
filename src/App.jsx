@@ -275,7 +275,8 @@ const campaignSlides = [
     copy: "Fine-detail engraving, fast personalization, and a production path that grows beyond the first project.",
     action: "Explore XRF",
     href: machineLinks.xrf,
-    image: "xrf-dark-hero.webp",
+    image: "xrf-dark-hero-1600.webp",
+    mobileImage: "xrf-dark-hero-900.webp",
     alt: "OneLaser XRF desktop RF laser on a dark engineering stage",
     theme: "dark",
   },
@@ -286,7 +287,8 @@ const campaignSlides = [
     copy: "A high-throughput platform for larger formats, repeat orders, and demanding production environments.",
     action: "Explore Hydra Gen2",
     href: machineLinks.hydra,
-    image: "home-product-hydra-gen2-scene.webp",
+    image: "campaign-hydra.webp",
+    mobileImage: "campaign-hydra-760.webp",
     alt: "OneLaser Hydra Gen2 in a working production studio",
     theme: "image",
   },
@@ -297,7 +299,8 @@ const campaignSlides = [
     copy: "Bring design, prototyping, and hands-on STEM work into classrooms, labs, and maker spaces.",
     action: "Explore education fit",
     href: "https://www.1laser.com/pages/contact-us",
-    image: "home-industry-education-v2.jpg",
+    image: "campaign-education.webp",
+    mobileImage: "campaign-education-900.webp",
     alt: "Students collaborating on hands-on projects in a classroom",
     theme: "image",
   },
@@ -313,50 +316,70 @@ const lineupCards = [
 const projectFilters = ["All", "Wood", "Acrylic", "Leather", "Metal", "Glass"];
 
 const showcaseProjects = [
-  { title: "Personalized Serving Board", material: "Wood", materials: ["Wood"], outcome: "Premium gifting and local retail", machine: "XRF", image: "product-walnut-serving-board.webp" },
-  { title: "Family Photo Panel", material: "Wood", materials: ["Wood"], outcome: "Personalized wall art", machine: "XRF", image: "product-photo-wall-panel.webp" },
-  { title: "Layered Acrylic Wall Sign", material: "Acrylic", materials: ["Acrylic"], outcome: "Signage and event production", machine: "Cobra Series", image: "home-project-large-acrylic-sign.webp" },
-  { title: "Mountain Feature Wall", material: "Walnut", materials: ["Wood"], outcome: "Large-format interior décor", machine: "Hydra Gen2", image: "home-project-walnut-mountain-wall.webp" },
-  { title: "Corporate Tumbler Batch", material: "Coated metal", materials: ["Metal"], outcome: "Repeat rotary personalization", machine: "VertiGo", image: "home-project-vertigo-corporate-tumbler-batch.webp" },
-  { title: "Leather Patch Cap", material: "Leather", materials: ["Leather"], outcome: "Branded merchandise", machine: "Cobra Series", image: "product-leather-patch-cap.webp" },
-  { title: "Keepsake Jewelry Box", material: "Wood", materials: ["Wood"], outcome: "Premium personalized gifts", machine: "XRF", image: "product-engraved-jewelry-box.webp" },
-  { title: "Layered City Map", material: "Wood", materials: ["Wood"], outcome: "Detailed large-format wall art", machine: "Hydra Gen2", image: "home-project-layered-city-map.webp" },
-  { title: "Batch Leather Gifts", material: "Leather", materials: ["Leather"], outcome: "Repeatable corporate orders", machine: "Hydra Gen2", image: "home-project-batch-leather-gifts.webp" },
-  { title: "Custom Tumbler", material: "Coated metal", materials: ["Metal"], outcome: "Drinkware personalization", machine: "VertiGo", image: "product-custom-tumbler.webp" },
-  { title: "Outdoor Estate Sign", material: "Wood", materials: ["Wood"], outcome: "High-value exterior signage", machine: "Hydra Gen2", image: "product-outdoor-estate-sign.webp" },
+  { image: "product-walnut-serving-board.webp", title: "Personalized Serving Board", material: "Wood", materials: ["Wood"], machineId: "xrf" },
+  { image: "product-photo-wall-panel.webp", title: "Family Photo Panel", material: "Wood", materials: ["Wood"], machineId: "xrf" },
+  { image: "home-project-large-acrylic-sign.webp", title: "Layered Acrylic Wall Sign", material: "Acrylic", materials: ["Acrylic"], machineId: "cobra" },
+  { image: "home-project-walnut-mountain-wall.webp", title: "Mountain Feature Wall", material: "Walnut", materials: ["Wood"], machineId: "hydra" },
+  { image: "product-wine-bottle.webp", title: "Adventure Bottle", material: "Coated Metal", materials: ["Metal"], machineId: "vertigo" },
+  { image: "product-custom-tumbler.webp", title: "Custom Tumbler", material: "Coated Metal", materials: ["Metal"], machineId: "vertigo" },
+  { image: "product-acrylic-counter-sign.webp", title: "Counter Sign", material: "Acrylic", materials: ["Acrylic"], machineId: "cobra" },
+  { image: "product-rocks-glass.webp", title: "Whiskey Glass Set", material: "Glass", materials: ["Glass"], machineId: "xrf" },
+  { image: "product-leather-patch-cap.webp", title: "Leather Patch Cap", material: "Leather", materials: ["Leather"], machineId: "cobra" },
+  { image: "product-engraved-jewelry-box.webp", title: "Keepsake Jewelry Box", material: "Wood", materials: ["Wood"], machineId: "xrf" },
+  { image: "home-project-batch-leather-gifts.webp", title: "Batch Leather Gift Set", material: "Leather", materials: ["Leather"], machineId: "hydra" },
+  { image: "home-project-layered-city-map.webp", title: "Layered City Map", material: "Wood", materials: ["Wood"], machineId: "hydra" },
+  { image: "product-leather-wallet.webp", title: "Monogram Wallet", material: "Leather", materials: ["Leather"], machineId: "xrf" },
+  { image: "product-outdoor-estate-sign.webp", title: "Outdoor Estate Sign", material: "Wood", materials: ["Wood"], machineId: "hydra" },
+  { image: "product-coated-metal-tags.webp", title: "Branded Metal Tags", material: "Coated Metal", materials: ["Metal"], machineId: "hydra" },
+  { image: "product-custom-keychains.webp", title: "Custom Keychains", material: "Leather", materials: ["Leather"], machineId: "cobra" },
+  { image: "product-house-number-sign.webp", title: "Modern House Number", material: "Wood", materials: ["Wood"], machineId: "hydra" },
+  { image: "power-38w-result.webp", title: "Portrait & Botanical Collection", material: "Wood, Acrylic & Leather", materials: ["Wood", "Acrylic", "Leather"], machineId: "xrf" },
+  { image: "power-70w-result.webp", title: "Wildlife Art Collection", material: "Wood, Acrylic & Coated Metal", materials: ["Wood", "Acrylic", "Metal"], machineId: "hydra" },
+  { image: "material-wood.webp", title: "Wood Maker Collection", material: "Wood", materials: ["Wood"], machineId: "xrf" },
+  { image: "material-acrylic.webp", title: "Acrylic Design Collection", material: "Acrylic", materials: ["Acrylic"], machineId: "cobra" },
+  { image: "material-glass-stone.webp", title: "Glass & Stone Collection", material: "Glass & Stone", materials: ["Glass"], machineId: "xrf" },
+  { image: "material-leather.webp", title: "Personalized Leather Goods", material: "Leather", materials: ["Leather"], machineId: "xrf" },
+  { image: "home-project-etsy-wedding-welcome-suite.webp", title: "Wedding Welcome Suite", material: "Acrylic, Coated Metal & Glass", materials: ["Acrylic", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-whiskey-decanter-gift-set.webp", title: "Whiskey Decanter Gift Set", material: "Wood, Leather, Coated Metal & Glass", materials: ["Wood", "Leather", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-pet-memorial-keepsake.webp", title: "Pet Memorial Keepsake", material: "Acrylic & Leather", materials: ["Acrylic", "Leather"], machineId: "xrf" },
+  { image: "home-project-etsy-corporate-logo-barware-set.webp", title: "Corporate Barware Set", material: "Leather, Coated Metal & Glass", materials: ["Leather", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-bridesmaid-table-setting.webp", title: "Bridesmaid Table Setting", material: "Acrylic, Leather, Coated Metal & Glass", materials: ["Acrylic", "Leather", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-city-map-home-bar-set.webp", title: "City Map Home Bar Set", material: "Wood, Leather, Coated Metal & Glass", materials: ["Wood", "Leather", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-personalized-coffee-station.webp", title: "Personalized Coffee Station", material: "Acrylic, Leather, Coated Metal & Glass", materials: ["Acrylic", "Leather", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-family-recipe-display.webp", title: "Family Recipe Display", material: "Acrylic, Leather & Coated Metal", materials: ["Acrylic", "Leather", "Metal"], machineId: "xrf" },
+  { image: "home-project-etsy-wedding-vow-keepsake-box.webp", title: "Wedding Vow Keepsake Box", material: "Wood, Acrylic, Leather & Coated Metal", materials: ["Wood", "Acrylic", "Leather", "Metal"], machineId: "xrf" },
+  { image: "home-project-etsy-groomsmen-bar-set.webp", title: "Groomsmen Bar Set", material: "Wood, Leather, Coated Metal & Glass", materials: ["Wood", "Leather", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-baby-name-nursery-keepsake.webp", title: "Baby Name Nursery Keepsake", material: "Acrylic & Leather", materials: ["Acrylic", "Leather"], machineId: "xrf" },
+  { image: "home-project-etsy-realtor-closing-gift-set.webp", title: "Realtor Closing Gift Set", material: "Wood, Acrylic, Leather, Coated Metal & Glass", materials: ["Wood", "Acrylic", "Leather", "Metal", "Glass"], machineId: "xrf" },
+  { image: "home-project-etsy-holiday-ornament-collection.webp", title: "Holiday Ornament Collection", material: "Wood, Acrylic, Leather & Glass", materials: ["Wood", "Acrylic", "Leather", "Glass"], machineId: "xrf" },
+  { image: "home-project-vertigo-wildflower-handled-tumbler.webp", title: "Wildflower Handled Tumbler", material: "Powder-Coated Metal", materials: ["Metal"], machineId: "vertigo" },
+  { image: "home-project-vertigo-mountain-rambler.webp", title: "Mountain Rambler Tumbler", material: "Powder-Coated Metal", materials: ["Metal"], machineId: "vertigo" },
+  { image: "home-project-vertigo-coastal-wide-mouth-bottle.webp", title: "Coastal Wide-Mouth Bottle", material: "Powder-Coated Metal", materials: ["Metal"], machineId: "vertigo" },
+  { image: "home-project-vertigo-celestial-flip-sip-bottle.webp", title: "Celestial Flip-Sip Bottle", material: "Powder-Coated Metal", materials: ["Metal"], machineId: "vertigo" },
+  { image: "home-project-vertigo-corporate-tumbler-batch.webp", title: "Corporate Tumbler Batch", material: "Powder-Coated Metal", materials: ["Metal"], machineId: "vertigo" },
+  { image: "home-project-vertigo-event-tumbler-batch.webp", title: "Event Tumbler Batch", material: "Powder-Coated Metal", materials: ["Metal"], machineId: "vertigo" },
 ];
 
-const performanceStories = [
-  {
-    eyebrow: "RF PRECISION",
-    title: "Details stay sharp when the work gets fast.",
-    copy: "Fast RF response helps preserve small type, clean edges, and consistent contrast across repeat engraving work.",
-    proof: "0.07 mm spot · Up to 2,000 DPI",
-    image: "why-onelaser-rf-precision.jpg",
-    alt: "Close-up OneLaser RF engraving detail and laser head",
-  },
-  {
-    eyebrow: "SPEED WITH CONTROL",
-    title: "Motion designed to hold the toolpath.",
-    copy: "Closed-loop motion, a lighter head, and Hydra-derived all-steel axes keep fast production controlled instead of simply chasing a headline number.",
-    proof: "1,200 mm/s · True 3.5G",
-    image: "why-onelaser-unmatched-speed.jpg",
-    alt: "OneLaser motion system shown during high-speed engraving",
-  },
-  {
-    eyebrow: "VISION WORKFLOW",
-    title: "See the job before the first cut.",
-    copy: "Camera-guided positioning brings artwork, material, and the working area into one direct workflow for more confident setup.",
-    proof: "Full-bed view · Guided alignment",
-    image: "why-onelaser-vision-intelligence.jpg",
-    alt: "OneLaser vision system aligning artwork to material",
-  },
+const machineDisplayNames = { xrf: "XRF", cobra: "Cobra Series", hydra: "Hydra Gen2", vertigo: "VertiGo" };
+
+const projectOutcome = (project) => {
+  if (project.machineId === "vertigo") return "Rotary personalization for drinkware and cylindrical goods";
+  if (project.machineId === "hydra") return "Larger-format or repeat production";
+  if (project.machineId === "cobra") return "Flexible cutting and engraving for mixed workshop work";
+  return "Detailed personalization and premium finished goods";
+};
+
+const performancePillars = [
+  ["01", "Full Vision Intelligence", "Camera-guided alignment, edge detection, and mark detection place artwork where it belongs."],
+  ["02", "Rock-solid construction", "Rigid aluminum and reinforced industrial structures hold precision through demanding work."],
+  ["03", "RF production leadership", "Fast RF response supports cleaner detail and more repeatable output across desktop and industrial workflows."],
+  ["04", "Engineered and supported in the USA", "U.S.-based service, training, and parts support keep ownership moving after delivery."],
 ];
 
 const ambitionPaths = [
-  { id: "makers", label: "Makers", title: "Turn ideas into finished objects.", copy: "Move from one-off experiments to polished gifts, home décor, signs, and personal work with a machine matched to what you want to make.", image: "home-industry-makers-v2.jpg", alt: "Maker presenting finished engraved creations", href: "https://www.1laser.com/pages/laser-engraving-community", action: "Meet the community" },
-  { id: "business", label: "Business", title: "Build a workflow you can repeat.", copy: "Choose the right platform for personalization, broader catalogs, repeat orders, and dependable daily production.", image: "home-industry-business-v2.jpg", alt: "Small business owner preparing personalized products", href: "https://www.1laser.com/products/sales-consultation-call", action: "Talk to a laser expert" },
-  { id: "education", label: "Education", title: "Make learning tangible.", copy: "Bring prototyping, design, and hands-on STEM work into classrooms, labs, and maker spaces with training and support close at hand.", image: "home-industry-education-v2.jpg", alt: "Students collaborating on hands-on STEM projects", href: "https://www.1laser.com/pages/contact-us", action: "Explore education fit" },
+  { id: "makers", label: "Makers", title: "Turn ideas into finished objects.", copy: "Move from one-off experiments to polished gifts, home décor, signs, and personal work with a machine matched to what you want to make.", image: "ambition-makers.webp", mobileImage: "ambition-makers-900.webp", alt: "Maker presenting finished engraved creations", href: "https://www.1laser.com/products/sales-consultation-call", action: "Let's Talk with Our Experts" },
+  { id: "business", label: "Business", title: "Build a workflow you can repeat.", copy: "Choose the right platform for personalization, broader catalogs, repeat orders, and dependable daily production.", image: "ambition-business.webp", mobileImage: "ambition-business-900.webp", alt: "Small business owner preparing personalized products", href: "https://www.1laser.com/products/sales-consultation-call", action: "Let's Talk with Our Experts" },
+  { id: "education", label: "Education", title: "Make learning tangible.", copy: "Bring prototyping, design, and hands-on STEM work into classrooms, labs, and maker spaces with training and support close at hand.", image: "ambition-education.webp", mobileImage: "ambition-education-900.webp", alt: "Students collaborating on hands-on STEM projects", href: "https://www.1laser.com/products/sales-consultation-call", action: "Let's Talk with Our Experts" },
 ];
 
 const realWorldVideos = [
@@ -404,6 +427,7 @@ export function App() {
   const [submitted, setSubmitted] = useState(false);
   const [activeCampaign, setActiveCampaign] = useState(0);
   const [projectFilter, setProjectFilter] = useState("All");
+  const [activeProject, setActiveProject] = useState(null);
   const [activeAmbition, setActiveAmbition] = useState("makers");
   const [activeVideo, setActiveVideo] = useState(null);
   const suppressMegaFocusRef = useRef(false);
@@ -434,18 +458,28 @@ export function App() {
   }, [menuOpen]);
 
   useEffect(() => {
-    if (!activeVideo) return undefined;
+    if (!activeVideo && !activeProject) return undefined;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const closeOnEscape = (event) => {
-      if (event.key === "Escape") setActiveVideo(null);
+      if (event.key === "Escape") {
+        setActiveVideo(null);
+        setActiveProject(null);
+      }
     };
     window.addEventListener("keydown", closeOnEscape);
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", closeOnEscape);
     };
-  }, [activeVideo]);
+  }, [activeProject, activeVideo]);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      projectRailRef.current?.scrollTo({ left: 0, behavior: "auto" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [projectFilter]);
 
   const enterMegaMenu = (menu) => (event) => {
     if (event.key !== "ArrowDown") return;
@@ -467,6 +501,13 @@ export function App() {
   const finderReady = material && volume && format;
   const filteredProjects = showcaseProjects.filter((project) => projectFilter === "All" || project.materials.includes(projectFilter));
   const selectedAmbition = ambitionPaths.find((item) => item.id === activeAmbition) || ambitionPaths[0];
+
+  const moveProject = (direction) => {
+    if (!activeProject) return;
+    const index = filteredProjects.findIndex((project) => project.image === activeProject.image);
+    const nextIndex = (index + direction + filteredProjects.length) % filteredProjects.length;
+    setActiveProject(filteredProjects[nextIndex]);
+  };
 
   const chooseAudience = (id) => {
     setAudience(id);
@@ -584,7 +625,10 @@ export function App() {
       <div className="page-content" id="top">
         <main className="v3-main">
           <section className={"v3-campaign v3-campaign--" + campaignSlides[activeCampaign].theme} aria-labelledby="campaign-title">
-            <img className="v3-campaign__image" src={asset(campaignSlides[activeCampaign].image)} alt={campaignSlides[activeCampaign].alt} />
+            <picture>
+              <source media="(max-width: 760px)" srcSet={asset(campaignSlides[activeCampaign].mobileImage)} />
+              <img className="v3-campaign__image" src={asset(campaignSlides[activeCampaign].image)} alt={campaignSlides[activeCampaign].alt} fetchPriority={activeCampaign === 0 ? "high" : "auto"} decoding="async" />
+            </picture>
             <span className="v3-campaign__shade" />
             <div className="v3-campaign__copy">
               <span>{campaignSlides[activeCampaign].eyebrow}</span>
@@ -592,6 +636,8 @@ export function App() {
               <p>{campaignSlides[activeCampaign].copy}</p>
               <ExternalLink className="v3-button v3-button--red" href={campaignSlides[activeCampaign].href}>{campaignSlides[activeCampaign].action} <ArrowUpRight weight="bold" /></ExternalLink>
             </div>
+            <button className="v3-campaign__arrow v3-campaign__arrow--previous" type="button" aria-label="Previous featured story" onClick={() => setActiveCampaign((current) => (current - 1 + campaignSlides.length) % campaignSlides.length)}><CaretLeft /></button>
+            <button className="v3-campaign__arrow v3-campaign__arrow--next" type="button" aria-label="Next featured story" onClick={() => setActiveCampaign((current) => (current + 1) % campaignSlides.length)}><CaretRight /></button>
             <div className="v3-campaign__controls" aria-label="Choose a featured OneLaser story">
               {campaignSlides.map((slide, index) => (
                 <button className={index === activeCampaign ? "is-active" : ""} type="button" aria-label={"Show " + slide.eyebrow} aria-current={index === activeCampaign ? "true" : undefined} onClick={() => setActiveCampaign(index)} key={slide.id}><span /></button>
@@ -602,13 +648,13 @@ export function App() {
           <section className="v3-section v3-lineup" id="v3-machines" aria-labelledby="lineup-title">
             <header className="v3-heading">
               <span>MEET THE ONELASER LINEUP</span>
-              <h2 id="lineup-title">Start with what you want to make.</h2>
-              <p>Four distinct platforms, each built around a different kind of work. Compare the fit before you compare the spec sheet.</p>
+              <h2 id="lineup-title">Engrave the Future</h2>
+              <p>Browse our high-performance machines engineered for elite creators</p>
             </header>
             <div className="v3-lineup__grid">
               {lineupCards.map((machine) => (
                 <ExternalLink className={"v3-lineup-card v3-lineup-card--" + machine.id} href={machine.href} key={machine.id}>
-                  <img className="v3-lineup-card__scene" src={asset(machine.scene)} alt="" />
+                  <img className="v3-lineup-card__scene" src={asset(machine.scene)} alt="" loading="lazy" decoding="async" />
                   <span className="v3-lineup-card__shade" />
                   <div className="v3-lineup-card__copy">
                     <span>{machine.label}</span>
@@ -616,7 +662,7 @@ export function App() {
                     <p>{machine.copy}</p>
                     <strong>Explore {machine.name.replace("™ Series", "").replace("™", "")} <ArrowUpRight /></strong>
                   </div>
-                  <img className="v3-lineup-card__machine" src={asset(machine.image)} alt={machine.name + " laser machine"} />
+                  <img className="v3-lineup-card__machine" src={asset(machine.image)} alt={machine.name + " laser machine"} loading="lazy" decoding="async" />
                 </ExternalLink>
               ))}
             </div>
@@ -628,9 +674,9 @@ export function App() {
                 <p>Choose the material, production pace, and object format. The recommendation explains the match instead of hiding it behind a score.</p>
               </div>
               <form className="v3-finder__form" onSubmit={submitFinder}>
-                <label><span>Material</span><select required value={material} onChange={(event) => { setMaterial(event.target.value); setSubmitted(false); }}><option value="">Select material</option><option value="wood">Wood, leather, coated metal</option><option value="acrylic">Acrylic and signage</option><option value="glass">Glass and drinkware</option><option value="mixed">Mixed materials</option></select></label>
-                <label><span>Output volume</span><select required value={volume} onChange={(event) => { setVolume(event.target.value); setSubmitted(false); }}><option value="">Select output volume</option><option value="small-batch">Projects and small batches</option><option value="shared">Shared studio or classroom</option><option value="production">Daily production and repeat orders</option></select></label>
-                <label><span>Object format</span><select required value={format} onChange={(event) => { setFormat(event.target.value); setSubmitted(false); }}><option value="">Select object format</option><option value="flat">Mostly flat materials</option><option value="large">Large sheets and panels</option><option value="cylindrical">Tumblers and cylindrical goods</option></select></label>
+                <label><span>Material</span><span className="v3-select-control"><select required value={material} onChange={(event) => { setMaterial(event.target.value); setSubmitted(false); }}><option value="">Select material</option><option value="wood">Wood, leather, coated metal</option><option value="acrylic">Acrylic and signage</option><option value="glass">Glass and drinkware</option><option value="mixed">Mixed materials</option></select><CaretDown aria-hidden="true" /></span></label>
+                <label><span>Output volume</span><span className="v3-select-control"><select required value={volume} onChange={(event) => { setVolume(event.target.value); setSubmitted(false); }}><option value="">Select output volume</option><option value="small-batch">Projects and small batches</option><option value="shared">Shared studio or classroom</option><option value="production">Daily production and repeat orders</option></select><CaretDown aria-hidden="true" /></span></label>
+                <label><span>Object format</span><span className="v3-select-control"><select required value={format} onChange={(event) => { setFormat(event.target.value); setSubmitted(false); }}><option value="">Select object format</option><option value="flat">Mostly flat materials</option><option value="large">Large sheets and panels</option><option value="cylindrical">Tumblers and cylindrical goods</option></select><CaretDown aria-hidden="true" /></span></label>
                 <button className="v3-button v3-button--red" type="submit">Show my match <ArrowRight weight="bold" /></button>
               </form>
               {submitted && (
@@ -644,9 +690,9 @@ export function App() {
                       <li><strong>Production pace</strong><span>{volume === "production" ? "Daily production" : volume === "shared" ? "Shared use" : "Projects / small batches"}</span></li>
                       <li><strong>Object format</strong><span>{format === "cylindrical" ? "Cylindrical goods" : format === "large" ? "Large sheets / panels" : "Mostly flat"}</span></li>
                     </ul>
-                    <ExternalLink className="v3-button v3-button--dark" href={recommendation.href}>Explore {recommendation.name.replace("™", "")} <ArrowUpRight /></ExternalLink>
+                    <ExternalLink className="v3-button v3-button--red" href={recommendation.href}>Explore {recommendation.name.replace("™", "")} <ArrowUpRight /></ExternalLink>
                   </div>
-                  <img src={asset(recommendation.image)} alt={recommendation.name + " laser machine"} />
+                  <img src={asset(recommendation.image)} alt={recommendation.name + " laser machine"} loading="lazy" decoding="async" />
                 </article>
               )}
             </div>
@@ -658,31 +704,40 @@ export function App() {
               <div className="v3-rail-controls"><button type="button" aria-label="Previous projects" onClick={() => projectRailRef.current?.scrollBy({ left: -520, behavior: "smooth" })}><CaretLeft /></button><button type="button" aria-label="More projects" onClick={() => projectRailRef.current?.scrollBy({ left: 520, behavior: "smooth" })}><CaretRight /></button></div>
             </header>
             <nav className="v3-made__filters" aria-label="Filter projects by engraved material">
-              {projectFilters.map((filter) => <button className={projectFilter === filter ? "is-active" : ""} type="button" aria-pressed={projectFilter === filter} onClick={() => { setProjectFilter(filter); projectRailRef.current?.scrollTo({ left: 0, behavior: "smooth" }); }} key={filter}>{filter}</button>)}
+              <div>{projectFilters.map((filter) => <button className={projectFilter === filter ? "is-active" : ""} type="button" aria-pressed={projectFilter === filter} onClick={() => { setProjectFilter(filter); projectRailRef.current?.scrollTo({ left: 0, behavior: "smooth" }); }} key={filter}>{filter}</button>)}</div>
             </nav>
             <div className="v3-made__rail" ref={projectRailRef}>
               {filteredProjects.map((project) => (
-                <article className="v3-project" key={project.title}>
-                  <img src={asset(project.image)} alt={project.title} />
+                <button className="v3-project" type="button" onClick={() => setActiveProject(project)} aria-label={"View details for " + project.title} key={project.image}>
+                  <img src={asset(project.image)} alt={project.title} loading="lazy" decoding="async" />
                   <span className="v3-project__shade" />
-                  <div><span>{project.material}</span><h3>{project.title}</h3><p>{project.outcome}</p><strong>Best fit: {project.machine}</strong></div>
-                </article>
+                  <div><span>{project.material}</span><h3>{project.title}</h3><p>{projectOutcome(project)}</p><strong>Best fit: {machineDisplayNames[project.machineId]}</strong></div>
+                </button>
               ))}
             </div>
           </section>
 
           <section className="v3-performance" id="v3-why" aria-labelledby="performance-title">
             <div className="v3-section">
-              <header className="v3-heading v3-heading--inverse"><span>WHY ONELASER PERFORMS BETTER</span><h2 id="performance-title">Performance is more than one number.</h2><p>RF response, controlled motion, vision-assisted setup, rigid structure, and U.S. engineering work together from first alignment to finished output.</p></header>
-              <div className="v3-performance__stories">
-                {performanceStories.map((story) => (
-                  <article className="v3-performance-story" key={story.eyebrow}>
-                    <figure><img src={asset(story.image)} alt={story.alt} /></figure>
-                    <div><span>{story.eyebrow}</span><h3>{story.title}</h3><p>{story.copy}</p><strong>{story.proof}</strong></div>
-                  </article>
-                ))}
+              <div className="v3-performance__stage">
+                <div className="v3-performance__statement">
+                  <span>WHY ONELASER</span>
+                  <h2 id="performance-title">Performance, engineered as one.</h2>
+                  <p>RF response, intelligent vision, controlled motion, rigid construction, and U.S. support work together—from the first alignment to finished output.</p>
+                  <strong>Buy Once. Run Longer. Make More.</strong>
+                  <div className="v3-performance__metrics" aria-label="OneLaser performance proof points">
+                    <div><b>30,000</b><span>hours RF source life</span></div>
+                    <div><b>2,000</b><span>mm/s on Hydra Gen2</span></div>
+                    <div><b>4G</b><span>acceleration</span></div>
+                  </div>
+                </div>
+                <img src={asset("why-onelaser-rf-precision.jpg")} alt="Exploded OneLaser RF engineering system with fine engraving detail" loading="lazy" decoding="async" />
               </div>
-              <div className="v3-performance__proof"><span><strong>20% lighter head</strong>Faster controlled movement</span><span><strong>All-steel axes</strong>Hydra-derived motion structure</span><span><strong>U.S. engineering</strong>Guidance and technical support</span></div>
+              <div className="v3-performance__media-proof">
+                <figure><picture><source media="(max-width: 760px)" srcSet={asset("rf-longer-lifespan-760.webp")} /><img src={asset("rf-longer-lifespan.webp")} alt="Glass tube and RF tube lifespan, cooling, and stability comparison" loading="lazy" decoding="async" /></picture><figcaption><span>LONGEVITY PROOF</span><strong>Stable RF output, less cooling complexity, and less maintenance.</strong></figcaption></figure>
+                <figure><picture><source media="(max-width: 760px)" srcSet={asset("detail-proof-760.webp")} /><img src={asset("detail-proof.webp")} alt="Fine OneLaser logo engraved on a wooden applicator" loading="lazy" decoding="async" /></picture><figcaption><span>DETAIL PROOF</span><strong>Fast response preserves detail at production scale.</strong></figcaption></figure>
+              </div>
+              <div className="v3-performance__pillars" aria-label="The OneLaser performance system">{performancePillars.map(([number, title, copy]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
             </div>
           </section>
 
@@ -692,7 +747,7 @@ export function App() {
               {ambitionPaths.map((item) => <button className={activeAmbition === item.id ? "is-active" : ""} type="button" role="tab" aria-selected={activeAmbition === item.id} onClick={() => setActiveAmbition(item.id)} key={item.id}>{item.label}</button>)}
             </div>
             <article className="v3-ambition-stage" role="tabpanel">
-              <img src={asset(selectedAmbition.image)} alt={selectedAmbition.alt} />
+              <picture><source media="(max-width: 760px)" srcSet={asset(selectedAmbition.mobileImage)} /><img src={asset(selectedAmbition.image)} alt={selectedAmbition.alt} loading="lazy" decoding="async" /></picture>
               <span className="v3-ambition-stage__shade" />
               <div><span>{selectedAmbition.label}</span><h3>{selectedAmbition.title}</h3><p>{selectedAmbition.copy}</p><ExternalLink href={selectedAmbition.href}>{selectedAmbition.action} <ArrowUpRight /></ExternalLink></div>
             </article>
@@ -706,7 +761,7 @@ export function App() {
             <div className="v3-real__rail" ref={videoRailRef}>
               {realWorldVideos.map((video) => (
                 <article className="v3-video-card" key={video.id}>
-                  <button type="button" aria-label={"Play " + video.title} onClick={() => setActiveVideo(video)}><img src={asset(video.image)} alt="" /><span><Play weight="fill" /></span></button>
+                  <button type="button" aria-label={"Play " + video.title} onClick={() => setActiveVideo(video)}><img src={asset(video.image)} alt="" loading="lazy" decoding="async" /><span><Play weight="fill" /></span></button>
                   <h3>{video.title}</h3><p>{video.copy}</p>
                 </article>
               ))}
@@ -714,9 +769,9 @@ export function App() {
           </section>
 
           <section className="v3-standard" id="v3-standard" aria-labelledby="standard-title">
-            <div className="v3-standard__visual"><img src={asset("xrf-workshop-story.webp")} alt="OneLaser owner with an XRF machine and finished work in a U.S. workshop" /></div>
+            <div className="v3-standard__visual"><img src={asset("onelaser-us-headquarters.webp")} alt="OneLaser U.S. headquarters in Lake Forest, California" loading="lazy" decoding="async" /></div>
             <div className="v3-standard__content">
-              <header className="v3-heading"><span>THE ONELASER STANDARD</span><h2 id="standard-title">The machine is only the beginning.</h2><p>Ownership is backed by a U.S. company, local guidance, training, official policy coverage, and technical support after delivery.</p></header>
+              <header className="v3-heading"><span>THE ONELASER STANDARD</span><h2 id="standard-title">Make better with one.</h2><p>Ownership is backed by a U.S. company, local guidance, training, official policy coverage, and technical support after delivery.</p></header>
               <div className="v3-standard__grid">{standardPillars.map((pillar) => <article key={pillar.title}><h3>{pillar.title}</h3><p>{pillar.copy}</p></article>)}</div>
               <ExternalLink className="v3-text-link" href="https://www.1laser.com/pages/sales-consultation">Explore OneLaser support <ArrowUpRight /></ExternalLink>
             </div>
@@ -727,7 +782,7 @@ export function App() {
             <div className="v3-explore__links">
               {exploreLinks.map((item) => <ExternalLink href={item.href} key={item.label}><span>{item.label}</span><h3>{item.title}</h3><strong>{item.action} <ArrowUpRight /></strong></ExternalLink>)}
             </div>
-            <div className="v3-final-cta"><div><span>READY WHEN YOU ARE</span><h2>Find the OneLaser built for you.</h2></div><div><ExternalLink className="v3-button v3-button--light" href="https://www.1laser.com/collections/laser-engraving-cutting-marking-machines">Shop laser machines <ArrowUpRight /></ExternalLink><ExternalLink className="v3-final-cta__link" href="https://www.1laser.com/products/sales-consultation-call">Book a free call</ExternalLink></div></div>
+            <div className="v3-final-cta"><div><span>READY WHEN YOU ARE</span><h2>Find the OneLaser built for you.</h2></div><div><ExternalLink className="v3-button v3-button--light" href="https://www.1laser.com/collections/laser-engraving-cutting-marking-machines">Shop laser machines <ArrowUpRight /></ExternalLink></div></div>
           </section>
 
           {activeVideo && (
@@ -735,6 +790,25 @@ export function App() {
               <div className="v3-video-modal__panel">
                 <button type="button" aria-label="Close video" onClick={() => setActiveVideo(null)}><X weight="bold" /></button>
                 <iframe src={"https://www.youtube-nocookie.com/embed/" + activeVideo.id + "?autoplay=1&rel=0"} title={activeVideo.title} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
+              </div>
+            </div>
+          )}
+
+          {activeProject && (
+            <div className="v3-project-modal" role="dialog" aria-modal="true" aria-labelledby="v3-project-modal-title" onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveProject(null); }}>
+              <div className="v3-project-modal__panel">
+                <div className="v3-project-modal__media">
+                  <img src={asset(activeProject.image)} alt={activeProject.title} />
+                  <button className="v3-project-modal__close" type="button" aria-label="Close project" onClick={() => setActiveProject(null)}><X weight="bold" /></button>
+                  <button className="v3-project-modal__previous" type="button" aria-label="Previous project" onClick={() => moveProject(-1)}><CaretLeft weight="bold" /></button>
+                  <button className="v3-project-modal__next" type="button" aria-label="Next project" onClick={() => moveProject(1)}><CaretRight weight="bold" /></button>
+                </div>
+                <div className="v3-project-modal__intro"><div><span>{activeProject.material}</span><h2 id="v3-project-modal-title">{activeProject.title}</h2></div><p>{projectOutcome(activeProject)}</p></div>
+                <div className="v3-project-modal__details">
+                  <section><span>PROJECT SPECIFICATIONS</span><h3>From material to finished work.</h3><dl><div><dt>Engraved material</dt><dd>{activeProject.material}</dd></div><div><dt>Production path</dt><dd>{projectOutcome(activeProject)}</dd></div></dl></section>
+                  <section><span>WHY IT FITS</span><h3>A clear path to production.</h3><p>{activeProject.machineId === "vertigo" ? "A dedicated vertical rotary workflow keeps cylindrical drinkware stable and repeatable." : activeProject.machineId === "hydra" ? "The larger production platform supports bigger formats, demanding batches, and repeat orders." : activeProject.machineId === "cobra" ? "Flexible CO₂ cutting and engraving supports layered, mixed-material, and workshop-scale work." : "RF precision supports detailed flat engraving and repeatable personalization."}</p></section>
+                  <section className="v3-project-modal__machine"><span>RECOMMENDED MACHINE</span><h3>{machineDisplayNames[activeProject.machineId]}</h3><img src={asset(machines[activeProject.machineId].image)} alt={machineDisplayNames[activeProject.machineId] + " laser machine"} /><ExternalLink href={machines[activeProject.machineId].href}>Explore {machineDisplayNames[activeProject.machineId]} <ArrowUpRight /></ExternalLink></section>
+                </div>
               </div>
             </div>
           )}

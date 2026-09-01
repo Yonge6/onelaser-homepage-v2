@@ -17,4 +17,12 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Reuse the published OneLaser homepage header, accessible Mega Menu behavior, announcement bar, and full footer rather than creating V2-only global chrome.
 - Do not show section progress labels such as `02 / 05`. Keep major section titles on one line at desktop widths; allow responsive wrapping below the desktop navigation breakpoint.
 - Project proof must make the decision logic explicit: product → material → production goal → best-fit machine.
+- The machine lineup shows isolated official machine renders by default; desktop hover and keyboard focus reveal the corresponding real-use scene. Keep the pure-machine state available on touch devices.
+- The finder result uses the red primary action for the recommended machine.
+- Made with OneLaser reuses the full published homepage project library, its segmented material filter, horizontal multi-row rail, and accessible project-detail dialog. The rail may run full viewport width while headings remain on the 1360 px content grid.
+- Why OneLaser uses one dark engineering stage, a three-metric proof rail, two approved evidence images, and one compact four-part system strip. The reading order is engineering system → numeric proof → visible proof → ownership system; avoid a flat wall of equal-weight feature cards or the former long alternating story stack.
+- Lineup, Why OneLaser, and Built for Every Ambition use a compact 64 px desktop entry rhythm so adjacent section padding does not create oversized blank bands; Why OneLaser itself stays on white.
+- The OneLaser Standard uses the user-supplied compressed U.S. headquarters aerial as its lead visual and the title `Make better with one.`. The section stays white/transparent; its image uses the same inset content width and 24–32 px radius as other primary media.
+- Campaign and ambition photography must ship as responsive compressed WebP assets; the first campaign image is preloaded and below-fold images remain lazy-loaded.
+- Hero campaigns expose previous/next controls at the vertical edges in addition to the bottom story indicators; keep both keyboard accessible.
 - Lock the published announcement bar, top navigation, accessible Mega Menu, and full footer unless the user explicitly reopens those areas. Homepage content follows: Hero Campaigns → Meet the OneLaser Lineup (with finder) → Made with OneLaser → Why OneLaser Performs Better → Built for Every Ambition → OneLaser in the Real World → The OneLaser Standard → Explore / Community / final CTA.
